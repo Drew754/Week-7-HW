@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <script src="assets/app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script>
+ //Intialize Firebase
+      var config = {
+       apiKey: "AIzaSyDsDvy3J0kwWjwCq3RY5uXVzb7X2_BsovQ",
+       authDomain: "train-time-90b30.firebaseapp.com",
+       databaseURL: "https://train-time-90b30.firebaseio.com",
+       projectId: "train-time-90b30",
+       storageBucket: "",
+       messagingSenderId: "792894158882"
+    };
+    firebase.initializeApp(config);
+    </script>
+   
+   <style>
+    .card-body a {
+        word-break: break-all;
+    }
+    .articleHeadline {
+        line-height: 1.5;
+    }
+    table, th, td {
+        border: 1px solid black
+    }
+</style>
+    <title>Trains</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class = "col-sm-12">
+    <div class="jumbotron" style="background-color: #20315A ; color: white;">
+        <h1 class="text-center">
+            <strong>
+                <i class="fa fa-newspaper-o"></i> Train Schedule Thing</strong>
+        </h1>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <br>
+
+            <div class="card">
+                <div class="card-header">
+                    <center>
+                        <table id = "directory">
+                            <style> table, th, td {
+                                    border: 1px solid black
+                                }</style>
+                            <thead>
+                                <tr>
+                                    <th id="trainName">Train Name</th>
+                                    <th id="destination">Destination</th>
+                                    <th id="frequency">Frequency (Minutes)</th>
+                                    <th id="nextArrival">Next Train Arriving</th>
+                                    <th id="minutesAway">Minutes Away</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </center>
+                </div>
+                
+                <div class="card-body"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class ="col-sm-12">
+            <div class=>
+                <strong>
+                    <i class="fa fa-list-alt"></i>Add Train</strong>
+            </div>
+            <br>
+            <div class="card">
+                <div class="card-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="trainName">Train Name:</label>
+                            <input type="text" class="form-control" id="trainName-term">
+                        </div>
+                        <div class="form-group">
+                            <label for="destination">Destination</label>
+                            <input type="text" class="form-control" id="destination-term">
+                        </div>
+                        <div class="form-group">
+                            <label for="firstTrainTime">First Train Time (24 Hour Time)</label>
+                            <input type="time" class="form-control" id="firstTrainTime">
+                        </div>
+                        <div class="form-group">
+                            <label for="frequency">Frequency (Min)</label>
+                            <input type="time" class="form-control" id="frequencyInput">
+                        </div>
+                        <button id="add-train" type="button" class "btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
